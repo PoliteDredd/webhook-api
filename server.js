@@ -6,6 +6,16 @@ const PORT = process.env.PORT || 3000;
 // Parsing JSON
 app.use(express.json());
 
+// Root endpoint
+app.get("/", (req, res) => {
+  res.json({
+    message: "Server is running",
+    endpoints: {
+      webhook: "POST /webhook - Send data to sort alphabetically"
+    }
+  });
+});
+
 // POST endpoint
 app.post("/webhook", (req, res) => {
   const { data } = req.body;
