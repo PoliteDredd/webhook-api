@@ -17,7 +17,7 @@ app.post("/webhook", (req, res) => {
     .sort((a, b) => a.localeCompare(b));
 
   return res.status(200).json({
-    word: sortedArray,
+    word: sortedArray
   });
 });
 
